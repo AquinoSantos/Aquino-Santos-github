@@ -8,11 +8,22 @@ public class Bebida {
 
 
     public Bebida(String nome, double preco, int quantidade, String tipo, String descricao) {
-        this.nome = nome;
-        this.preco = preco;
-        this.quantidade = quantidade;
-        this.tipo = tipo;
-        this.descricao = descricao;
+        this.nome= nome;
+      if(preco>0){
+         this.preco= preco;
+         
+      }
+      if(quantidade>=0){
+         this.quantidade= quantidade;
+    }else{
+    	JOptionPane.showMessageDialog(null, 
+                "Quantia não pode ser menor que 0!", 
+                "Aviso", 
+                JOptionPane.WARNING_MESSAGE);
+    }
+      this.tipo= tipo;
+      this.descricao=descricao;
+      JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
     }
 
 
